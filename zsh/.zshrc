@@ -1,7 +1,7 @@
 autoload -U colors && colors
 #PS1="%B%{$fg[black]%}[%{$fg[black]%}%n%{$fg[black]%}@%{$fg[black]%}%M %{$fg[yellow]%}%~%{$fg[black]%}]%{$reset_color%}$%b "
 
-PS1="%B%{$fg[black]%}%{$fg[blue]%}%n %{$fg[yellow]%}%~%{$fg[black]%}%{$reset_color%} ->%b "
+PS1="%B%{$fg[black]%}%{$fg[white]%}%n %{$fg[yellow]%}%~%{$fg[black]%}%{$reset_color%} ->%b "
 
 autoload -U compinit
 zstyle ':completion:*' menu select
