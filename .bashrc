@@ -8,9 +8,6 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# neofetch #
-neofetch --ascii ~/Documents/JH/neofetch/fubuki.txt
-
 # update/upgrade #
 alias update="sudo pacman -Syyu" 
 
