@@ -26,3 +26,15 @@ set mouse+=a
 
 " disable bell noise
 set noerrorbells visualbell t_vb=
+
+" highlight search
+set hls
+
+" extend history
+set history=8192
+
+" open split pane right and bottom
+set splitbelow
+set splitright
+
+
