@@ -37,4 +37,5 @@ set history=8192
 set splitbelow
 set splitright
 
-
+" tabstops
+set tabstop=2 shiftwidth=2 expandtab

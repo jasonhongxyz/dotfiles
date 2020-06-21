@@ -1,7 +1,8 @@
 autoload -U colors && colors
 #PS1="%B%{$fg[black]%}[%{$fg[black]%}%n%{$fg[black]%}@%{$fg[black]%}%M %{$fg[yellow]%}%~%{$fg[black]%}]%{$reset_color%}$%b "
 
-
+path+=('/home/jason/.local/bin')
+export PATH
 
 PS1="%B%{$fg[black]%}%{$fg[white]%}%n %{$fg[yellow]%}%~%{$fg[black]%}%{$reset_color%} ->%b "
 
@@ -140,9 +141,18 @@ if [ -f '/home/jason/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jason/googl
 if [ -f '/home/jason/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jason/google-cloud-sdk/completion.zsh.inc'; fi
 
 # cowsay on start
-cowsay $(fortune)
+# cowsay $(fortune)
+
+# neofetch on start
+neofetch | lolcat
+
+source /home/jason/.config/broot/launcher/bash/br
+
+eval "$(gh completion -s zsh)"
+
+# date
+# date "+%Y %b %d (%a) %I:%M%p"
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-source /home/jason/.config/broot/launcher/bash/br
