@@ -1,5 +1,10 @@
+" jason's vimrc
+
 " syntax
 syntax on
+
+" disable default vim startup
+set shortmess+=I
 
 " show line numbers and relative line numbers
 set rnu

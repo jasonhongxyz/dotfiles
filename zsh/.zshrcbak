@@ -1,8 +1,5 @@
 # jason's .zshrc
 
-# color
-autoload -U colors && colors
-
 # changes prompt to ' jason -> '
 PS1="%B%{$fg[black]%}%{$fg[white]%}%n %{$fg[yellow]%}%~%{$fg[black]%}%{$reset_color%} ->%b "
 
@@ -109,13 +106,21 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/jason/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jason/google-cloud-sdk/path.zsh.inc'; fi
 
-# startup
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/jason/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jason/google-cloud-sdk/completion.zsh.inc'; fi
+
 # cowsay on start
 # cowsay $(fortune)
 
 # neofetch on start
 neofetch | lolcat
+
+source /home/jason/.config/broot/launcher/bash/br
+
+eval "$(gh completion -s zsh)"
 
 # date
 # date "+%Y %b %d (%a) %I:%M%p"

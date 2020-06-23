@@ -1,5 +1,5 @@
 # Symlink install
 
-ln -sv ~/dotfiles/bash/.bashrc ~/.bashrc
+# ln -sv ~/dotfiles/bash/.bashrc ~/.bashrc
 ln -sv ~/dotfiles/vim/.vimrc ~/.vimrc
 ln -sv ~/dotfiles/zsh/.zshrc ~/.zshrc
