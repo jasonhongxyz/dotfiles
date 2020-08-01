@@ -1,7 +1,16 @@
+#       ____  __
+#      / / / / /    Jason Hong
+# __  / / /_/ /     https://github.com/jasonhong0810
+#/ /_/ / __  /      :) 
+#\____/_/ /_/   
+
 # jason's .zshrc
 
 # color
 autoload -U colors && colors
+
+# TERM
+export TERM=xterm-256color
 
 # changes prompt to ' jason -> '
 PS1="%B%{$fg[black]%}%{$fg[white]%}%n %{$fg[yellow]%}%~%{$fg[black]%}%{$reset_color%} ->%b "

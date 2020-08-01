@@ -23,6 +23,9 @@ set backspace=indent,eol,start
 " allows hidden buffers with unsaved changes
 set hidden
 
+" hide mode
+set noshowmode
+
 " makes search case-insensitive, search becomes case-sensitive if it contains any capital letters
 set ignorecase
 set smartcase
@@ -71,6 +74,18 @@ Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
 
 " plugin configuration
+
+" NERDTree
 let NERDTreeShowHidden=1
+
+" lightline
+if !has('gui_running')
+  set t_Co=256
+endif
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ }
+
+" 
 
 call plug#end()

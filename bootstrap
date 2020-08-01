@@ -3,3 +3,5 @@
 # ln -sv ~/dotfiles/bash/.bashrc ~/.bashrc
 ln -sv ~/Documents/JH/projects/dotfiles/vim/vimrc ~/.vimrc
 ln -sv ~/Documents/JH/projects/dotfiles/zsh/zshrc ~/.zshrc
+ln -sv ~/Documents/JH/projects/dotfiles/tmux/tmux.conf ~/.tmux.conf
+
