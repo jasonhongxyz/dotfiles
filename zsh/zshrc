@@ -66,7 +66,8 @@ bindkey -s '^o' 'lfcd\n'  # zsh
 
 # Useful aliasing
 # update/upgrade #
-alias update="sudo pacman -Syyu" 
+#alias update="sudo pacman -Syyu" 
+alias update="sudo dnf upgrade"
 
 # diskspace #
 alias diskspace="du -S | sort -n -r | less"
@@ -111,9 +112,6 @@ sbs() { du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s",
 #Show active ports
 alias port='netstat -tulanp'
 
-#Use this for when the boss comes around to look busy.
-alias busy="cat /dev/urandom | hexdump -C | grep 'ca fe'"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -133,4 +131,3 @@ export PATH="/home/jason/.local/bin:$PATH"
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
