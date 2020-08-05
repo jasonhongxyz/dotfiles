@@ -65,6 +65,7 @@ call plug#begin('~/.vim/plugsrc')
 " general
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/fzf'
+Plug 'morhetz/gruvbox'
 
 " gui
 Plug 'preservim/nerdtree'
@@ -83,9 +84,11 @@ if !has('gui_running')
   set t_Co=256
 endif
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'jellybeans',
   \ }
 
-" 
-
 call plug#end()
+
+" gruvbox
+set bg=dark
+colorscheme gruvbox
