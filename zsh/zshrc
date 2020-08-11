@@ -100,11 +100,11 @@ extract() {
     fi
 }
 
+# Active ports #
+alias port='netstat -tulanp'
+
 #List by file size in current directory
 sbs() { du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"):    $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e';}
-
-#Show active ports
-alias port='netstat -tulanp'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -120,7 +120,7 @@ neofetch | lolcat
 # date
 # date "+%Y %b %d (%a) %I:%M%p"
 
-export PATH="/home/jason/.local/bin:$PATH"
+export PATH="/home/jason/scripts:/home/jason/.local/bin:$PATH"
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

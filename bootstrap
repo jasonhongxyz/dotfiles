@@ -32,6 +32,7 @@ symlinks () {
     ln -svfn ~/Documents/JH/projects/dotfiles/vim/vimrc ~/.vimrc
     ln -svfn ~/Documents/JH/projects/dotfiles/zsh/zshrc ~/.zshrc
     ln -svfn ~/Documents/JH/projects/dotfiles/tmux/tmux.conf ~/.tmux.conf
+    ln -svfn ~/Documents/JH/projects/dotfiles/scripts ~/scripts
     echo_prompt "symlinking done"
   else
     echo_prompt "Symlinking cancelled"

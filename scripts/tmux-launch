@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Session variables
+SESSION="dev-env"
+LIVE=$(tmux ls | grep $SESSION)
+
+# If a session doesn't exist
+if [ "$LIVE" = "" ]
+then
+  # Start
+  tmux new-session -d -s $SESSION
+
+  # Rename window
+  tmux rename-window -t 0 'Main'
+
+  # Setup main window
+  tmux split-window -h
+  tmux split-window
+
+  # Set up initial programs
+  tmux select-pane -t 1
+  tmux send-keys "htop" Enter
+
+  # Cursor on left-most
+  tmux select-pane -t 0
+fi
+
+tmux attach-session -t $SESSION:0
