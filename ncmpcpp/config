@@ -1,0 +1,64 @@
+[mpd]
+mpd_music_dir = "~/Documents/JH/music"
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_crossfade_time = "2"
+
+[ui]
+browser_display_mode = "columns"
+autocenter_mode = "yes"
+colors_enabled = "yes"
+main_window_color = "white"
+header_window_color = "black"
+volume_color = "red"
+progressbar_color = "blue"
+statusbar_color = "white"
+active_window_border = "blue"
+state_line_color = "black"
+
+song_list_format = "{$3%n │ $9}{$7%a - $9}{$5%t$9}|{$8%f$9}$R{$6 │ %b$9}{$3 │ %l$9}"
+song_columns_list_format = "(10)[blue]{l} (30)[green]{a} (30)[magenta]{b} (50)[yellow]{t}"
+alternative_header_first_line_format = "$0$aqqu$/a {$7%a - $9}{$5%t$9}|{$8%f$9} $0$atqq$/a$9"
+alternative_header_second_line_format = "{{$6%b$9}{ [$6%y$9]}}|{%D}"
+current_item_prefix = "$(blue)$r"
+current_item_suffix = "$/r$(end)"
+
+user_interface = "alternative"
+
+[header]
+playlist_shorten_total_times = "yes"
+
+[playlist]
+playlist_display_mode = "columns"
+playlist_disable_highlight_delay = "0"
+playlist_show_remaining_time = "yes"
+
+[visualizer]
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "12"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "+|"
+
+[statusbar]
+progressbar_look = "=>-"
+progressbar_boldness = "yes"
+progressbar_elapsed_color = "white"
+now_playing_prefix = "$b$5"
+now_playing_suffix = "$/b$9"
+
+[visibility]
+header_visibility = "yes"
+statusbar_visibility = "yes"
+titles_visibility = "yes"
+
+[navigation]
+cyclic_scrolling = "yes"
+header_text_scrolling = "yes"
+jump_to_now_playing_song_at_start = "yes"
+
+[other]
+system_encoding = "utf-8"
+display_bitrate = "yes"
+
