@@ -20,6 +20,9 @@ init () {
   mkdir -p "$PATH_TO_PROJECTS"
   echo_prompt "Making a PLAYGROUND folder in $PATH_TO_PLAYGROUND"
   mkdir -p "$PATH_TO_PLAYGROUND"
+  echo_prompt "Making a mpd and ncmpcpp config folder in $HOME"
+  mkdir -p .ncmpcpp
+  mkdir -p .mpd
 }
 
 # Symlink install
@@ -32,6 +35,9 @@ symlinks () {
     ln -svfn ~/Documents/JH/projects/dotfiles/vim/vimrc ~/.vimrc
     ln -svfn ~/Documents/JH/projects/dotfiles/zsh/zshrc ~/.zshrc
     ln -svfn ~/Documents/JH/projects/dotfiles/tmux/tmux.conf ~/.tmux.conf
+    ln -svfn ~/Documents/JH/projects/dotfiles/ncmpcpp/config ~/.ncmpcpp/config
+    ln -svfn ~/Documents/JH/projects/dotfiles/ncmpcpp/bindings ~/.ncmpcpp/bindings
+    ln -svfn ~/Documents/JH/projects/dotfiles/mpd/mpd.conf ~/.mpd/mpd.conf
     ln -svfn ~/Documents/JH/projects/dotfiles/scripts ~/scripts
     echo_prompt "symlinking done"
   else
