@@ -14,12 +14,15 @@ then
   tmux rename-window -t 0 'Main'
 
   # Setup main window
-  tmux split-window -h
   tmux split-window
+  tmux split-window -h
 
   # Set up initial programs
   tmux select-pane -t 1
   tmux send-keys "htop" Enter
+  
+  tmux select-pane -t 2
+  tmux send-keys "ncmpcpp" Enter
 
   # Cursor on left-most
   tmux select-pane -t 0
