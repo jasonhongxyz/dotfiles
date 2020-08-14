@@ -20,9 +20,14 @@ init () {
   mkdir -p "$PATH_TO_PROJECTS"
   echo_prompt "Making a PLAYGROUND folder in $PATH_TO_PLAYGROUND"
   mkdir -p "$PATH_TO_PLAYGROUND"
-  echo_prompt "Making a mpd and ncmpcpp config folder in $HOME"
+  echo_prompt "Making a mpd and ncmpcpp config folder in $HOME and .config respectively."
   mkdir -p .ncmpcpp
-  mkdir -p .mpd
+  mkdir -p ~/.config/mpd
+  echo_prompt "Disabling mpd as a system service, Enabling as user process."
+  sudo systemctl disable mpd.service
+  sudo systemctl disable mpd.socket
+  systemctl --user enable mpd.service
+  systemctl --user enable mpd.socket
 }
 
 # Symlink install
@@ -37,7 +42,7 @@ symlinks () {
     ln -svfn ~/Documents/JH/projects/dotfiles/tmux/tmux.conf ~/.tmux.conf
     ln -svfn ~/Documents/JH/projects/dotfiles/ncmpcpp/config ~/.ncmpcpp/config
     ln -svfn ~/Documents/JH/projects/dotfiles/ncmpcpp/bindings ~/.ncmpcpp/bindings
-    ln -svfn ~/Documents/JH/projects/dotfiles/mpd/mpd.conf ~/.mpd/mpd.conf
+    ln -svfn ~/Documents/JH/projects/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
     ln -svfn ~/Documents/JH/projects/dotfiles/scripts ~/scripts
     echo_prompt "symlinking done"
   else
