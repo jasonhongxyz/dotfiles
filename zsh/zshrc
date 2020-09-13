@@ -13,7 +13,7 @@ autoload -U colors && colors
 export TERM=xterm-256color
 
 # changes prompt to ' jason -> '
-PS1="%B%{$fg[black]%}%{$fg[white]%}%n %{$fg[yellow]%}%~%{$fg[black]%}%{$reset_color%} ->%b "
+PS1="%B%{$fg[black]%}%{$fg[white]%}%n %{$fg[yellow]%}%~%{$fg[black]%}%{$reset_color%} >%b "
 
 # vimkeys
 bindkey -v

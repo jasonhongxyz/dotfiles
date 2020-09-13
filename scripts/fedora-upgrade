@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# General Fedora maintenance - run on occasion #
+
+# Backup Package list #
+rpm -qa | sort > pkglist.txt
+
+# Install from previously saved list #
+# sudo dnf install $(cat pkglist.txt)
+
+# Remove orphaned packages #
+sudo dnf autoremove
+
+# Remove package cache #
+sudo dnf clean all
+
+# Final update
+sudo dnf upgrade

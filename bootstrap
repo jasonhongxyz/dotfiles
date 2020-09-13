@@ -32,7 +32,7 @@ init () {
 
 # Symlink install
 symlinks () {
-  echo_prompt "Installing symlinks for vim, tmux, and zsh in the home directory..."
+  echo_prompt "Installing symlinks for vim, tmux, zsh, mpd, and ncmpcpp in the home directory..."
   read -p "$PROMPT Proceed? (Y/n)" -n 1 -r
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]  
@@ -44,7 +44,7 @@ symlinks () {
     ln -svfn ~/Documents/JH/projects/dotfiles/ncmpcpp/bindings ~/.ncmpcpp/bindings
     ln -svfn ~/Documents/JH/projects/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
     ln -svfn ~/Documents/JH/projects/dotfiles/scripts ~/scripts
-    echo_prompt "symlinking done"
+    echo_prompt "Symlinking done"
   else
     echo_prompt "Symlinking cancelled"
     return 1
