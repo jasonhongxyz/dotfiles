@@ -8,7 +8,7 @@ cd ~/dotfiles
 chmod +x ~/dotfiles/bootstrap
 ./bootstrap
 ```
-The bootstrap script is idempotent, and can be run may times!
+The bootstrap script is idempotent.
 
 ### zsh as default
 To run zsh automatically after ssh auth, add this line to the end of .bashrc

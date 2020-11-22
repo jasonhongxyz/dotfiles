@@ -52,6 +52,9 @@ set splitright
 " tabstops
 set tabstop=2 shiftwidth=2 expandtab
 
+" background kitty
+let &t_ut=''
+
 " plugins
 " vim-plug automatic installation
 if empty(glob('~/.vim/autoload/plug.vim'))

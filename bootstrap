@@ -43,6 +43,8 @@ symlinks () {
     ln -svfn ~/Documents/JH/projects/dotfiles/ncmpcpp/config ~/.ncmpcpp/config
     ln -svfn ~/Documents/JH/projects/dotfiles/ncmpcpp/bindings ~/.ncmpcpp/bindings
     ln -svfn ~/Documents/JH/projects/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
+    ln -svfn ~/Documents/JH/projects/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+    ln -svfn ~/Documents/JH/projects/dotfiles/kitty/gruvbox_dark.conf ~/.config/kitty/theme.conf
     ln -svfn ~/Documents/JH/projects/dotfiles/scripts ~/scripts
     echo_prompt "Symlinking done"
   else
