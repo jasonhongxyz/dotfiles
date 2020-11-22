@@ -24,3 +24,9 @@ sudo systemctl disable mpd.socket
 systemctl enable --user mpd.service
 systemctl enable --user mpd.socket
 ```
+
+### kitty themes
+Kitty theme credits to https://github.com/dexpota
+```
+ln -svfn theme-you-want.conf ~/.config/kitty/theme.conf
+```
