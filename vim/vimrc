@@ -81,6 +81,9 @@ Plug 'itchyny/lightline.vim'
 " syntactic language
 Plug 'w0rp/ale'
 
+" notes
+Plug 'vimwiki/vimwiki'
+
 " plugin configuration
 
 " NERDTree
@@ -99,3 +102,6 @@ call plug#end()
 " gruvbox
 set bg=dark
 colorscheme gruvbox
+
+" vimwiki
+let g:vimwiki_list = [{'path':'~/Documents/JH/vimwiki'}]
