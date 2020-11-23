@@ -121,6 +121,7 @@ neofetch | lolcat
 # date
 # date "+%Y %b %d (%a) %I:%M%p"
 
+# add scripts to path
 export PATH="/home/jason/scripts:/home/jason/.local/bin:$PATH"
 
 # Load zsh-syntax-highlighting; should be last.

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Start tmux environment
+
 # Session variables
 SESSION="dev-env"
 LIVE=$(tmux ls | grep $SESSION)

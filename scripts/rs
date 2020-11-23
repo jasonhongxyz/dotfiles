@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -uvrP --delete-after --exclude '~/Documents/JH/projects/website/.git' ~/Documents/JH/projects/website/ root@jasonhong.xyz:/var/www/jasonhong
