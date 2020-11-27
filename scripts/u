@@ -1,18 +1,21 @@
 #!/bin/sh
 
-# fedora upgrade
+# updates
 
-# Backup Package list #
+# backup package list
 rpm -qa | sort > ~/Documents/pkglist.txt
 
-# Install from previously saved list #
+# install from previously saved list
 # sudo dnf install $(cat pkglist.txt)
 
-# Remove orphaned packages #
+# clean orphaned pkgs
 sudo dnf autoremove
 
-# Remove package cache #
+# clean pkg cache
 # sudo dnf clean all
 
-# Final update
+# update
 sudo dnf upgrade
+
+# flatpaks
+flatpak update

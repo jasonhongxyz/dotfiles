@@ -3,7 +3,7 @@
 # Start tmux environment
 
 # Session variables
-SESSION="dev-env"
+SESSION="uwu-dev-env"
 LIVE=$(tmux ls | grep $SESSION)
 
 # If a session doesn't exist
@@ -24,7 +24,7 @@ then
   tmux send-keys "htop" Enter
   
   tmux select-pane -t 2
-  tmux send-keys "ncmpcpp" Enter
+  tmux send-keys "newsboat" Enter
 
   # Cursor on left-most
   tmux select-pane -t 0

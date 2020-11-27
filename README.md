@@ -1,14 +1,16 @@
 # dotfiles
 dot dot dot files
 
-### Installation
+## Installation
 ```
-git clone https://github.com/jasonhong0810/dotfiles.git ~/dotfiles
+git clone https://git.jasonhong.xyz/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 chmod +x ~/dotfiles/bootstrap
 ./bootstrap
 ```
-The bootstrap script is idempotent.
+## Notes
+1. The bootstrap script is written to be idempotent.
+2. Scripts have been checked with ShellCheck for bashisms and portability issues.
 
 ### zsh as default
 To run zsh automatically after ssh auth, add this line to the end of .bashrc
@@ -26,7 +28,7 @@ systemctl enable --user mpd.socket
 ```
 
 ### kitty themes
-Kitty theme credits to https://github.com/dexpota
+Kitty theme credits to [@dexpota](https://github.com/dexpota)
 ```
 ln -svfn theme-you-want.conf ~/.config/kitty/theme.conf
 ```

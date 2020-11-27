@@ -60,66 +60,12 @@ zle -N zle-keymap-select
 
 # Use beam shape cursor on startup.
 echo -ne '\e[5 q'
+
 # Use beam shape cursor for each new prompt.
 preexec() { echo -ne '\e[5 q' ;}
 
-bindkey -s '^o' 'lfcd\n'  # zsh
-
-# Useful aliasing
-# update/upgrade #
-#alias update="sudo pacman -Syyu" 
-alias update="sudo dnf upgrade"
-
-# diskspace #
-alias diskspace="du -S | sort -n -r | less"
-
-# extract #
-extract() {
-    if [ -z ${1} ] || [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
-        echo "Usage: extract <archive> [directory]"
-        echo "Example: extract presentation.zip."
-        echo "Valid archive types are:"
-        echo "tar.bz2, tar.gz, tar.xz, tar, bz2, gz, tbz2,"
-        echo "tbz, tgz, lzo, rar, zip, 7z, xz, txz, lzma and tlz"
-    else
-        case "$1" in
-            *.tar.bz2|*.tbz2|*.tbz)         tar xvjf "$1" ;;
-            *.tgz)                          tar zxvf "$1" ;;
-            *.tar.gz)                       tar xvzf "$1" ;;
-            *.tar.xz)                       tar xvJf "$1" ;;
-            *.tar)                          tar xvf "$1" ;;
-            *.rar)                          7z x "$1" ;;
-            *.zip)                          unzip "$1" ;;
-            *.7z)                           7z x "$1" ;;
-            *.lzo)                          lzop -d  "$1" ;;
-            *.gz)                           gunzip "$1" ;;
-            *.bz2)                          bunzip2 "$1" ;;
-            *.Z)                            uncompress "$1" ;;
-            *.xz|*.txz|*.lzma|*.tlz)        xz -d "$1" ;;
-            *) echo "Sorry, '$1' could not be decompressed." ;;
-        esac
-    fi
-}
-
-# Active ports #
-alias port='netstat -tulanp'
-
-#List by file size in current directory
-sbs() { du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"):    $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e';}
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # startup
-# cowsay on start
-# cowsay $(fortune)
-
-# neofetch on start
 neofetch | lolcat
-
-# date
-# date "+%Y %b %d (%a) %I:%M%p"
 
 # add scripts to path
 export PATH="/home/jason/scripts:/home/jason/.local/bin:$PATH"

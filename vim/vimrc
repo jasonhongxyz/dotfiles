@@ -59,6 +59,9 @@ set tabstop=2 shiftwidth=2 expandtab
 let &t_SI = "\<Esc>[6 q"
 let &t_EI = "\<Esc>[2 q"
 
+" auto-compile
+autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2&1" | redraw!
+
 " plugins
 " vim-plug automatic installation
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -85,7 +88,6 @@ Plug 'w0rp/ale'
 Plug 'vimwiki/vimwiki'
 
 " plugin configuration
-
 " NERDTree
 let NERDTreeShowHidden=1
 
