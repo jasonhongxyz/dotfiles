@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # extracts tar/zip
+# Last modified: 12/30/2020
+
 if [ -z "${1}" ] || [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
     echo "Usage: extract <archive> [directory]"
     echo "Example: extract presentation.zip."

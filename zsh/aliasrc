@@ -1,0 +1,5 @@
+#!/bin/sh
+
+alias rg="rsync --uvrP --delete-after ~/Documents/JH/projects/git/cgitrc root@jasonhong.xyz:/etc/cgitrc"
+alias rs="rsync --uvrP --delete-after --exclude '.git' ~/Documents/JH/projects/website/ root@jasonhong.xyz:/var/www/jasonhong"
+alias ls="ls --color"

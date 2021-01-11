@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Arch Linux update script
+# Last modified: 01/10/2020
+
+# backup package list from pacman
+printf '=====> Refreshing pacman pkglist <=====\n'
+pacman -Qqen > ~/.pkgs/pac_pkglist.txt
+
+# backup packages list from AUR
+printf '=====> Refreshing foreign pkglist <=====\n'
+pacman -Qqem > ~/.pkgs/foreign_pkglist.txt
+
+# install from previously saved list
+# sudo pacman -S --needed - < pkglist.txt
+
+# clean orphaned pkgs
+printf '=====> Cleaning orphaned packages <=====\n'
+sudo pacman -Qtdq | sudo pacman -Rns -
+
+# clean pkg cache
+printf '=====> Cleaning package cache <=====\n'
+sudo paccache -rvk3
+
+# update
+printf '=====> Running final update <=====\n'
+sudo pacman -Syu
+
+# flatpaks
+# printf '=====> Running flatpak updates <=====\n'
+# flatpak update

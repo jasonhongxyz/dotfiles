@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# sync git
-rsync -uvrP --delete-after  ~/Documents/JH/projects/git/cgitrc root@jasonhong.xyz:/etc/cgitrc

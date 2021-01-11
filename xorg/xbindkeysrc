@@ -1,0 +1,14 @@
+"slock"
+  F3
+
+"pamixer -t"
+  m:0x0 + c:121
+  XF86AudioMute
+
+"pamixer -d 5; kill -44 $(pidof dwmblocks)"
+  m:0x0 + c:122
+  XF86AudioLowerVolume
+
+"pamixer -i 5; kill -44 $(pidof dwmblocks)"
+  m:0x0 + c:123
+  XF86AudioRaiseVolume

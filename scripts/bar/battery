@@ -1,0 +1,15 @@
+#!/bin/sh
+
+BATTERY="/sys/class/power_supply/BAT0"
+STATUS=$(cat "$BATTERY/status")
+CAPACITY=$(cat "$BATTERY/capacity")
+
+case "$STATUS" in
+  "Full") STATUS="~";;
+  "Discharging") STATUS="-";;
+  "Charging") STATUS="+";;
+  "Not charging") STATUS="+/-";;
+  "Unknown") STATUS="?";;
+esac
+
+printf "%s%d%%" "$STATUS" "$CAPACITY";

@@ -56,8 +56,8 @@ set tabstop=2 shiftwidth=2 expandtab
 " let &t_ut=''
 
 " block in normal mode, beam in insert mode
-let &t_SI = "\<Esc>[6 q"
-let &t_EI = "\<Esc>[2 q"
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " auto-compile
 autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2&1" | redraw!
@@ -104,6 +104,7 @@ call plug#end()
 " gruvbox
 set bg=dark
 colorscheme gruvbox
+highlight normal ctermbg=black
 
 " vimwiki
 let g:vimwiki_list = [{'path':'~/Documents/JH/vimwiki'}]

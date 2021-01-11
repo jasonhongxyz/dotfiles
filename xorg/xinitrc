@@ -1,0 +1,9 @@
+#!/bin/sh
+
+xbindkeys
+setxkbmap -option caps:escape
+# xcompmgr -c &
+picom --no-fading-openclose &
+feh --no-fehbg --bg-scale ~/personal/wallpapers/cyberpunk/gasmask.jpg
+dwmblocks &
+exec dwm

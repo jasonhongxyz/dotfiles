@@ -1,6 +1,7 @@
 [mpd]
-mpd_music_dir = "~/Documents/JH/music"
-ncmpcpp_directory = ~/.ncmpcpp
+mpd_music_dir = "~/personal/music"
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/ncmpcpp/lyrics
 mpd_host = "localhost"
 mpd_port = "6600"
 mpd_crossfade_time = "2"
@@ -34,7 +35,7 @@ playlist_disable_highlight_delay = "0"
 playlist_show_remaining_time = "yes"
 
 [visualizer]
-visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_data_source = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
 visualizer_in_stereo = "yes"
 visualizer_type = "spectrum"

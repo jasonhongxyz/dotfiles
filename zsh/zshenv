@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# This file is run by zsh on login/startup to set basic environment variables
+
+# Defaults:
+export EDITOR="vim"
+export TERMINAL="st"
+export BROWSER="firefox"
+
+# ~/ Clean-up
+export ZDOTDIR="$HOME/.config/zsh"
+export LESSHISTFILE="-"

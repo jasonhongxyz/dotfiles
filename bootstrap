@@ -3,11 +3,7 @@
 PROMPT='[bootstrap]'
 
 # Environment 
-export PATH_TO_PLAYGROUND="$HOME/playground"
 export PATH_TO_PROJECTS="$HOME/projects"
-# export TXT_EDITOR="vim"
-# export TERMINAL="alacritty"
-# export BROWSER="firefox"
 
 # Echo utility
 echo_prompt () {
@@ -18,11 +14,8 @@ echo_prompt () {
 init () {
   echo_prompt "Making a PROJECTS folder in $PATH_TO_PROJECTS"
   mkdir -p "$PATH_TO_PROJECTS"
-  echo_prompt "Making a PLAYGROUND folder in $PATH_TO_PLAYGROUND"
-  mkdir -p "$PATH_TO_PLAYGROUND"
-  echo_prompt "Making a mpd and ncmpcpp config folder in $HOME and .config respectively."
-  mkdir -p .ncmpcpp
-  mkdir -p ~/.config/mpd
+  echo_prompt "Making a .config directory if it doesn't already exist"
+  mkdir -p ~/.config
   echo_prompt "Disabling mpd as a system service, Enabling as user process."
   sudo systemctl disable mpd.service
   sudo systemctl disable mpd.socket
@@ -30,26 +23,32 @@ init () {
   systemctl --user enable mpd.socket
 }
 
-# Symlink install
+# Install
 symlinks () {
-  echo_prompt "Installing symlinks for vim, tmux, zsh, mpd, and ncmpcpp in the home directory..."
+  echo_prompt "Installing symlinks for vim, tmux, zsh, mpd, ncmpcpp, newsboat in the .config directory..."
   read -p "$PROMPT Proceed? (Y/n)" -n 1 -r
   echo
-  if [[ $REPLY =~ ^[Yy]$ ]]  
+  if [[ "$REPLY" =~ ^[Yy]$ ]]
   then
-    ln -svfn ~/Documents/JH/projects/dotfiles/vim/vimrc ~/.vimrc
-    ln -svfn ~/Documents/JH/projects/dotfiles/zsh/zshrc ~/.zshrc
-    ln -svfn ~/Documents/JH/projects/dotfiles/tmux/tmux.conf ~/.tmux.conf
-    ln -svfn ~/Documents/JH/projects/dotfiles/ncmpcpp/config ~/.ncmpcpp/config
-    ln -svfn ~/Documents/JH/projects/dotfiles/ncmpcpp/bindings ~/.ncmpcpp/bindings
-    ln -svfn ~/Documents/JH/projects/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
-    ln -svfn ~/Documents/JH/projects/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
-    ln -svfn ~/Documents/JH/projects/dotfiles/kitty/gruvbox_dark.conf ~/.config/kitty/theme.conf
-    ln -svfn ~/Documents/JH/projects/dotfiles/scripts ~/scripts
-    ln -svfn ~/Documents/JH/projects/dotfiles/newsboat ~/.newsboat
-    echo_prompt "Symlinking done"
+    mkdir -p ~/.config/zsh ~/.config/ncmpcpp ~/.config/mpd ~/.config/kitty ~/.config/newsboat 
+    ln -svfn ~/dotfiles/vim/vimrc ~/.vimrc
+    ln -svfn ~/dotfiles/zsh/zshenv ~/.zshenv
+    ln -svfn ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+    ln -svfn ~/dotfiles/scripts ~/scripts
+
+    ln -svfn ~/dotfiles/xorg/xinitrc ~/.xinitrc
+
+    ln -svfn ~/dotfiles/zsh/zshrc ~/.config/zsh/.zshrc
+    ln -svfn ~/dotfiles/zsh/alaisrc ~/.config/aliasrc
+    ln -svfn ~/dotfiles/ncmpcpp/config ~/.config/ncmpcpp/config 
+    ln -svfn ~/dotfiles/ncmpcpp/bindings ~/.config/ncmpcpp/bindings
+    ln -svfn ~/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
+    ln -svfn ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+    ln -svfn ~/dotfiles/kitty/gruvbox_dark.conf ~/.config/kitty/theme.conf
+    ln -svfn ~/dotfiles/newsboat ~/.config/newsboat
+    echo_prompt "Symlink done"
   else
-    echo_prompt "Symlinking cancelled"
+    echo_prompt "Symlink cancelled"
     return 1
   fi
 }

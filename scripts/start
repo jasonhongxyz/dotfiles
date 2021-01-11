@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# Start tmux environment
+# tmux environment startup script
+# Last modified: 12/30/2020
 
 # Session variables
 SESSION="uwu-dev-env"
