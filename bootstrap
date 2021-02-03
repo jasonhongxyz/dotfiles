@@ -12,15 +12,15 @@ echo_prompt () {
 
 # Initialize
 init () {
-  echo_prompt "Making a PROJECTS folder in $PATH_TO_PROJECTS"
+  echo_prompt "Making a PROJECTS folder in $PATH_TO_PROJECTS if it doesn't already exist"
   mkdir -p "$PATH_TO_PROJECTS"
   echo_prompt "Making a .config directory if it doesn't already exist"
   mkdir -p ~/.config
-  echo_prompt "Disabling mpd as a system service, Enabling as user process."
-  sudo systemctl disable mpd.service
-  sudo systemctl disable mpd.socket
-  systemctl --user enable mpd.service
-  systemctl --user enable mpd.socket
+  # echo_prompt "Disabling mpd as a system service, Enabling as user process."
+  # sudo systemctl disable mpd.service
+  # sudo systemctl disable mpd.socket
+  # systemctl --user enable mpd.service
+  # systemctl --user enable mpd.socket
 }
 
 # Install
@@ -31,21 +31,20 @@ symlinks () {
   if [[ "$REPLY" =~ ^[Yy]$ ]]
   then
     mkdir -p ~/.config/zsh ~/.config/ncmpcpp ~/.config/mpd ~/.config/kitty ~/.config/newsboat 
-    ln -svfn ~/dotfiles/vim/vimrc ~/.vimrc
-    ln -svfn ~/dotfiles/zsh/zshenv ~/.zshenv
-    ln -svfn ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-    ln -svfn ~/dotfiles/scripts ~/scripts
-
-    ln -svfn ~/dotfiles/xorg/xinitrc ~/.xinitrc
-
-    ln -svfn ~/dotfiles/zsh/zshrc ~/.config/zsh/.zshrc
-    ln -svfn ~/dotfiles/zsh/alaisrc ~/.config/aliasrc
-    ln -svfn ~/dotfiles/ncmpcpp/config ~/.config/ncmpcpp/config 
-    ln -svfn ~/dotfiles/ncmpcpp/bindings ~/.config/ncmpcpp/bindings
-    ln -svfn ~/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
-    ln -svfn ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
-    ln -svfn ~/dotfiles/kitty/gruvbox_dark.conf ~/.config/kitty/theme.conf
-    ln -svfn ~/dotfiles/newsboat ~/.config/newsboat
+    ln -svfn ~/projects/dotfiles/vim/vimrc ~/.vimrc
+    ln -svfn ~/projects/dotfiles/zsh/zshenv ~/.zshenv
+    ln -svfn ~/projects/dotfiles/tmux/tmux.conf ~/.tmux.conf
+    ln -svfn ~/projects/dotfiles/scripts ~/scripts
+    ln -svfn ~/projects/dotfiles/xorg/xbindkeysrc ~/.xbindkeysrc
+    ln -svfn ~/projects/dotfiles/xorg/xinitrc ~/.xinitrc
+    ln -svfn ~/projects/dotfiles/zsh/zshrc ~/.config/zsh/.zshrc
+    ln -svfn ~/projects/dotfiles/zsh/aliasrc ~/.config/aliasrc
+    ln -svfn ~/projects/dotfiles/ncmpcpp/config ~/.config/ncmpcpp/config 
+    ln -svfn ~/projects/dotfiles/ncmpcpp/bindings ~/.config/ncmpcpp/bindings
+    ln -svfn ~/projects/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
+    ln -svfn ~/projects/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+    ln -svfn ~/projects/dotfiles/kitty/gruvbox_dark.conf ~/.config/kitty/theme.conf
+    ln -svfn ~/projects/dotfiles/newsboat ~/.config/newsboat
     echo_prompt "Symlink done"
   else
     echo_prompt "Symlink cancelled"

@@ -52,6 +52,10 @@ set splitright
 " tabstops
 set tabstop=2 shiftwidth=2 expandtab
 
+" omnicompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 " background kitty
 " let &t_ut=''
 
@@ -59,15 +63,29 @@ set tabstop=2 shiftwidth=2 expandtab
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-" auto-compile
+" auto-compile LaTeX files
 autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2&1" | redraw!
+
+" macro to substituate > S
+nnoremap S :%s//g<Left><Left>
+
+" copy-paste to system buffer
+set clipboard+=unnamedplus
 
 " plugins
 " vim-plug automatic installation
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+if has('nvim')
+  if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+else
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
 endif
 
 call plug#begin('~/.vim/plugsrc')
@@ -75,7 +93,10 @@ call plug#begin('~/.vim/plugsrc')
 " general
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/fzf'
+
+" colors
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim',{'as':'dracula'}
 
 " gui
 Plug 'preservim/nerdtree'
@@ -101,9 +122,9 @@ let g:lightline = {
 
 call plug#end()
 
-" gruvbox
+" colors
 set bg=dark
-colorscheme gruvbox
+colorscheme dracula
 highlight normal ctermbg=black
 
 " vimwiki
