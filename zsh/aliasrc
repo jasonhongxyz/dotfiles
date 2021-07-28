@@ -1,7 +1,13 @@
 #!/bin/sh
 
+# aliases
 alias sync-git="rsync --uvrP --delete-after ~/Documents/JH/projects/git/cgitrc root@jasonhong.xyz:/etc/cgitrc"
 alias sync-site="rsync --uvrP --delete-after --exclude '.git' ~/Documents/JH/projects/website/ root@jasonhong.xyz:/var/www/jasonhong"
 alias tmux-kill="tmux kill-session"
+alias screenshot="import -window root"
 alias ls="ls --color"
+# alias ls="ls -G"
 alias vim="nvim"
+
+# functions
+zat() { zathura "$1" 2>/dev/null & }

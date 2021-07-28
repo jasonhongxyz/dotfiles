@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# CPU Temperature script
+# Last modified: 06/08/2021
+
+NUM_PHYS_CORES=$(lscpu -p | grep -v '^#' | sort -u -t , -k 2 | wc -l)
+
+CL_COUNT=0
+UPLINE=$(tput cuu1)
+ERASELINE=$(tput el)
+
+echo "Cores detected: $NUM_PHYS_CORES"
+sensors | grep Core | awk '{print $1,$2,$3}'
+
+while sleep 1
+do
+  while [ "$CL_COUNT" -lt "$NUM_PHYS_CORES" ]
+  do
+    printf %s "$UPLINE$ERASELINE"
+    CL_COUNT=$((CL_COUNT + 1))
+  done
+  sensors | grep Core | awk '{print $1,$2,$3}'
+  CL_COUNT=0
+done

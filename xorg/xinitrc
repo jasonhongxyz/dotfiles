@@ -3,7 +3,7 @@
 xbindkeys
 setxkbmap -option caps:escape
 # xcompmgr -c &
-picom --no-fading-openclose &
-feh --no-fehbg --bg-scale ~/personal/wallpapers/cyberpunk/gasmask.jpg
+picom --no-fading-openclose --experimental-backends &
+# feh --no-fehbg --bg-scale ~/personal/wallpapers/normal/circlemountain.png
 dwmblocks &
 exec dwm

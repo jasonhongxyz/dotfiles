@@ -4,7 +4,7 @@
 # Last modified: 12/30/2020
 
 # Session variables
-SESSION="uwu-dev-env"
+SESSION="dev-env"
 LIVE=$(tmux ls | grep $SESSION)
 
 # If a session doesn't exist
@@ -17,6 +17,7 @@ then
   tmux rename-window -t 0 'Main'
 
   # Setup main window
+  tmux send-keys "vim" Enter
   tmux split-window
   tmux split-window -h
 
@@ -25,7 +26,6 @@ then
   tmux send-keys "htop" Enter
   
   tmux select-pane -t 2
-  tmux send-keys "newsboat" Enter
 
   # Cursor on left-most
   tmux select-pane -t 0

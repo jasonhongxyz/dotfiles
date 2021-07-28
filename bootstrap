@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROMPT='[bootstrap]'
+PROMPT='[dotfiles bootstrap]'
 
 # Environment 
 export PATH_TO_PROJECTS="$HOME/projects"
@@ -25,25 +25,47 @@ init () {
 
 # Install
 symlinks () {
-  echo_prompt "Installing symlinks for vim, tmux, zsh, mpd, ncmpcpp, newsboat in the .config directory..."
+  echo_prompt "Installing symlinks in respective directories..."
   read -p "$PROMPT Proceed? (Y/n)" -n 1 -r
   echo
   if [[ "$REPLY" =~ ^[Yy]$ ]]
   then
-    mkdir -p ~/.config/zsh ~/.config/ncmpcpp ~/.config/mpd ~/.config/kitty ~/.config/newsboat 
+    mkdir -p ~/.config/zsh ~/.config/nvim 
+    mkdir -p ~/.config/skhd ~/.config/yabai
+    mkdir -p ~/.config/ncmpcpp ~/.config/mpd ~/.config/kitty ~/.config/newsboat
+    # vim/nvim
     ln -svfn ~/projects/dotfiles/vim/vimrc ~/.vimrc
-    ln -svfn ~/projects/dotfiles/zsh/zshenv ~/.zshenv
+    ln -svfn ~/projects/dotfiles/vim/vimrc ~/.config/nvim/init.vim
+
+    # tmux
     ln -svfn ~/projects/dotfiles/tmux/tmux.conf ~/.tmux.conf
+
+    # scripts
     ln -svfn ~/projects/dotfiles/scripts ~/scripts
-    ln -svfn ~/projects/dotfiles/xorg/xbindkeysrc ~/.xbindkeysrc
-    ln -svfn ~/projects/dotfiles/xorg/xinitrc ~/.xinitrc
+
+    # skhd + yabai
+    ln -svfn ~/projects/dotfiles/skhd/skhdrc ~/.config/skhd/skhdrc
+    ln -svfn ~/projects/dotfiles/yabai/yabairc ~/.config/yabai/yabairc
+
+    # zsh
+    ln -svfn ~/projects/dotfiles/zsh/zshenv ~/.zshenv
     ln -svfn ~/projects/dotfiles/zsh/zshrc ~/.config/zsh/.zshrc
     ln -svfn ~/projects/dotfiles/zsh/aliasrc ~/.config/aliasrc
+
+    # Xorg
+    ln -svfn ~/projects/dotfiles/xorg/xbindkeysrc ~/.xbindkeysrc
+    ln -svfn ~/projects/dotfiles/xorg/xinitrc ~/.xinitrc
+
+    # ncmpcpp + mpd
     ln -svfn ~/projects/dotfiles/ncmpcpp/config ~/.config/ncmpcpp/config 
     ln -svfn ~/projects/dotfiles/ncmpcpp/bindings ~/.config/ncmpcpp/bindings
     ln -svfn ~/projects/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
+
+    # kitty
     ln -svfn ~/projects/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
     ln -svfn ~/projects/dotfiles/kitty/gruvbox_dark.conf ~/.config/kitty/theme.conf
+
+    # newsboat
     ln -svfn ~/projects/dotfiles/newsboat ~/.config/newsboat
     echo_prompt "Symlink done"
   else

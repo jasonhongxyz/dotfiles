@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# gitget - pull a single file from github
+
+# parse the input of the provided github link
+# TODO: There has to be a better way to do this (regex?)
+URL="$1"
+USER="$(echo "$URL" | cut -d '/' -f4)"
+REPO="$(echo "$URL" | cut -d '/' -f5)"
+BRANCH="$(echo "$URL" | cut -d '/' -f7)"
+FILE="${URL##*/}"
+
+# validate parsed input
+echo "URL: $URL"
+echo "USER: $USER"
+echo "REPOSITORY: $REPO"
+echo "BRANCH: $BRANCH"
+echo "FILE: $FILE"
+
+
+# wget the results of the file 
+wget "https://raw.githubusercontent.com/$USER/$REPO/$BRANCH/$FILE"
