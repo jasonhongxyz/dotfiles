@@ -5,11 +5,15 @@ autoload -U colors && colors
 export TERM=xterm-256color
 
 # Prompt
-PS1="%B%{$fg[black]%}%{$fg[white]%}%n %{$fg[magenta]%}%~%{$fg[black]%}%{$reset_color%} >%b "
+PS1="%B%{$fg[black]%}%{$fg[green]%}%n %{$fg[magenta]%}%~%{$fg[black]%}%{$reset_color%} >%b "
 #PS1="%B%{$fg[black]%}%{$fg[white]%} %{$fg[yellow]%}%~%{$fg[black]%}%{$reset_color%} >%b "
 
 # vimkeys
 bindkey -v
+
+# editor
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # history
 HISTFILE=~/.config/zsh/.zsh_history
@@ -60,11 +64,24 @@ preexec() { echo -ne '\e[5 q' ;}
 export PATH="$HOME/scripts/bar:$HOME/scripts:$HOME/.local/bin:$PATH"
 
 # startup
-export PF_COLOR=0
+export PF_COLOR=1
+export HOSTNAME="rhea"
 pfetch
 
 # source aliasrc
 source ~/.config/aliasrc
 
+# source pip
+export PATH="/Users/jasonhong/Library/Python/3.8/bin:$PATH"
+
+# source jdtls
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk/18.0.1.1/libexec/openjdk.jdk/Contents/Home"
+
+# source ruby
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.2
+
 # Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

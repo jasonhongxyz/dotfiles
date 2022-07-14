@@ -68,8 +68,9 @@ return require('packer').startup(function(use)
     },
     config = get_config("cmp"),
   })
-  use ({ 'ray-x/lsp_signature.nvim', require = { "neovim/nvim-lspconfig" }, config = get_config("lsp-signature"), })
+  use ({ 'ray-x/lsp_signature.nvim', require = { "neovim/nvim-lspconfig" }, config = get_config("lsp-signature") })
   use ({ 'windwp/nvim-autopairs', config = get_config("autopairs")})
+  use ({ 'jose-elias-alvarez/null-ls.nvim', config = get_config("nullls")})
 
   -- gui
   use 'junegunn/goyo.vim'
@@ -89,7 +90,7 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use({
 	"catppuccin/nvim",
-	as = "catppuccin", config = get_config("catppuccin")
+	as = "catppuccin",
   })
 
   -- Automatically set up your configuration after cloning packer.nvim

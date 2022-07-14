@@ -1,5 +1,3 @@
-vim.g.nvim_tree_highlight_opened_files = 0
-
 require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   disable_netrw = false,
@@ -29,6 +27,8 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     },
   },
   renderer = {
+    group_empty = true,
+    highlight_opened_files = "all",
     indent_markers = {
       enable = false,
       icons = {

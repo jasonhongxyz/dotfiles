@@ -1,1 +1,1 @@
-export PATH="/home/jason/scripts/bar:/home/jason/scripts:/home/jason/.local/bin:$PATH"
+export PATH="/home/jason/scripts/bar:/home/jason/scripts:/home/jason/.local/bin:/Users/jasonhong/Library/Python/3.8/bin:$PATH"

@@ -3,8 +3,8 @@
 # This file is run by zsh on login/startup to set basic environment variables
 
 # Defaults:
-export EDITOR="vim"
-export TERMINAL="st"
+export EDITOR="nvim"
+export TERMINAL="kitty"
 export BROWSER="firefox"
 
 # ~/ Clean-up

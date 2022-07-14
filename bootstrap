@@ -52,21 +52,29 @@ symlinks () {
     ln -svfn ~/projects/dotfiles/zsh/zshrc ~/.config/zsh/.zshrc
     ln -svfn ~/projects/dotfiles/zsh/aliasrc ~/.config/aliasrc
 
+    ln -svfn ~/projects/dotfiles/vim/init.lua ~/.config/nvim/init.lua
+    ln -svfn ~/projects/dotfiles/vim/lua ~/.config/nvim/lua
+
     # Xorg
-    ln -svfn ~/projects/dotfiles/xorg/xbindkeysrc ~/.xbindkeysrc
-    ln -svfn ~/projects/dotfiles/xorg/xinitrc ~/.xinitrc
+    # ln -svfn ~/projects/dotfiles/xorg/xbindkeysrc ~/.xbindkeysrc
+    # ln -svfn ~/projects/dotfiles/xorg/xinitrc ~/.xinitrc
 
     # ncmpcpp + mpd
-    ln -svfn ~/projects/dotfiles/ncmpcpp/config ~/.config/ncmpcpp/config 
-    ln -svfn ~/projects/dotfiles/ncmpcpp/bindings ~/.config/ncmpcpp/bindings
-    ln -svfn ~/projects/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
+    # ln -svfn ~/projects/dotfiles/ncmpcpp/config ~/.config/ncmpcpp/config 
+    # ln -svfn ~/projects/dotfiles/ncmpcpp/bindings ~/.config/ncmpcpp/bindings
+    # ln -svfn ~/projects/dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
 
     # kitty
     ln -svfn ~/projects/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
     ln -svfn ~/projects/dotfiles/kitty/gruvbox_dark.conf ~/.config/kitty/theme.conf
 
     # newsboat
-    ln -svfn ~/projects/dotfiles/newsboat ~/.config/newsboat
+    ln -svfn ~/projects/dotfiles/newsboat/config ~/.config/newsboat/config
+    ln -svfn ~/projects/dotfiles/newsboat/urls ~/.config/newsboat/urls
+
+    # taskwarrior
+    ln -svfn ~/projects/dotfiles/task/taskrc ~/.taskrc
+
     echo_prompt "Symlink done"
   else
     echo_prompt "Symlink cancelled"

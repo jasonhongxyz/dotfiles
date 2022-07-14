@@ -29,7 +29,7 @@ opt.background = "dark"
 -- g.tokyonight_italic_keywords = false
 -- g.tokyonight_italic_functions = false
 -- g.tokyonight_italic_variables = false
-vim.g.catppuccin_flavor = ""
+g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 vim.cmd [[ colorscheme catppuccin]]
 -- vim.cmd [[ colorscheme tokyonight ]]
 
@@ -42,9 +42,6 @@ g.go_doc_popup_window = 1
 g.vimwiki_list = { { path = '~/projects/knowledge/src/', syntax = 'markdown', ext = '.md',
                           nested_syntaxes = { python = 'python' } , auto_tags = 1 } }
 g.vimwiki_global_ext = 0
-
--- nvimtree
-g.nvim_tree_group_empty = 1
 
 -- codefmt
 vim.api.nvim_create_autocmd("VimEnter", { command = "call glaive#Install()", group = group})
