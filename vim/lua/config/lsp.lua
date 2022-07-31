@@ -4,7 +4,7 @@ local all_servs = { "bashls", "pyright", "gopls", "sumneko_lua", "jdtls", "ccls"
 
 lsp_installer.settings({
   ensure_installed = all_servs,
-  automatic_installation = true,
+  automatic_installation = false,
   ui = {
       icons = {
           server_installed = "✓",

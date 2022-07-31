@@ -24,15 +24,9 @@ return require('packer').startup(function(use)
 
   -- language
   use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = get_config("treesitter") })
-  use {
-    "williamboman/nvim-lsp-installer",
-    {
-        "neovim/nvim-lspconfig",
-        config = function()
-            require("config/lsp")
-        end
-    }
-  }
+  use { "williamboman/mason.nvim" , config = get_config("mason")}
+  use { "williamboman/mason-lspconfig.nvim" }
+  use { "neovim/nvim-lspconfig"}
 
   -- util
   use ({'L3MON4D3/LuaSnip', config = get_config("lualine")})
@@ -56,6 +50,7 @@ return require('packer').startup(function(use)
   use 'google/vim-maktaba'
   use 'google/vim-codefmt'
   use 'google/vim-glaive'
+  use 'dhruvasagar/vim-table-mode'
 
   -- completion
   use ({
@@ -90,7 +85,7 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use({
 	"catppuccin/nvim",
-	as = "catppuccin",
+	as = "catppuccin", config = get_config("catppuccin")
   })
 
   -- Automatically set up your configuration after cloning packer.nvim
