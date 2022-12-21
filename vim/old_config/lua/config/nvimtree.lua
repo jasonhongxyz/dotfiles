@@ -11,21 +11,34 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   sort_by = "name",
   update_cwd = false,
   view = {
-    width = 30,
-    height = 30,
-    hide_root_folder = false,
-    side = "left",
-    preserve_window_proportions = false,
-    number = false,
-    relativenumber = false,
-    signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = {
-        -- user mappings go here
+        adaptive_size = false,
+        centralize_selection = false,
+        width = 30,
+        hide_root_folder = false,
+        side = "left",
+        preserve_window_proportions = false,
+        number = false,
+        relativenumber = false,
+        signcolumn = "yes",
+        mappings = {
+          custom_only = false,
+          list = {
+            -- user mappings go here
+          },
+        },
+        float = {
+          enable = false,
+          quit_on_focus_loss = true,
+          open_win_config = {
+            relative = "editor",
+            border = "rounded",
+            width = 30,
+            height = 30,
+            row = 1,
+            col = 1,
+          },
+        },
       },
-    },
-  },
   renderer = {
     group_empty = true,
     highlight_opened_files = "all",
@@ -72,7 +85,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 400,
   },
   actions = {

@@ -1,53 +1,40 @@
-local opt = vim.opt
-local g = vim.g
+-- See `:help vim.o`
 
-opt.updatetime = 300
+-- set highlight on search
+vim.o.hlsearch = false
 
--- sidebar
-opt.number = true
-opt.relativenumber = true
-opt.colorcolumn = "80"
+-- make line numbers default
+vim.wo.number = true
 
--- search
-opt.ignorecase = true
-opt.smartcase = true
+-- enable break indent
+vim.o.breakindent = true
 
--- tabs
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
+-- save undo history
+vim.o.undofile = true
 
--- background
-opt.background = "dark"
+-- case insensitive search
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
--- colors
--- g.dracula_italic = 0
--- vim.cmd [[ colorscheme dracula ]]
--- g.termguicolors = true
--- g.tokyonight_style = "night"
--- g.tokyonight_italic_comments = false
--- g.tokyonight_italic_keywords = false
--- g.tokyonight_italic_functions = false
--- g.tokyonight_italic_variables = false
-g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-vim.cmd [[ colorscheme catppuccin]]
--- vim.cmd [[ colorscheme tokyonight ]]
+-- decrease update time
+vim.o.updatetime = 250
+vim.wo.signcolumn = 'yes'
 
--- plugins settings
+-- 2 spaces tabs
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
 
--- go
-g.go_doc_popup_window = 1
+-- colorscheme
+vim.o.termguicolors = true
+vim.cmd [[ colorscheme onedark ]]
 
--- vimwiki
-g.vimwiki_list = { { path = '~/projects/knowledge/src/', syntax = 'markdown', ext = '.md',
-                          nested_syntaxes = { python = 'python' } , auto_tags = 1 } }
-g.vimwiki_global_ext = 0
+-- set completeopt for completion
+vim.o.completeopt = 'menuone,noselect'
 
--- codefmt
-vim.api.nvim_create_autocmd("VimEnter", { command = "call glaive#Install()", group = group})
-vim.api.nvim_create_autocmd("VimEnter", { command = "Glaive codefmt plugin[mappings]", group = group})
-vim.api.nvim_create_autocmd("VimEnter", { command = 'Glaive codefmt google_java_executable="java -jar /Users/jasonhong/Downloads/google-java-format-1.15.0-all-deps.jar"'})
-
-g.asyncrun_open = 8
-
+-- set right column
+vim.o.colorcolumn = "80"
 vim.cmd [[ highlight ColorColumn ctermbg=0 guibg=lightgrey ]]
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '

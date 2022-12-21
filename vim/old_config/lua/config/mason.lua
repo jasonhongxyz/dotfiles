@@ -1,19 +1,15 @@
-local lsp_installer = require("nvim-lsp-installer")
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
 
-local all_servs = { "bashls", "pyright", "gopls", "sumneko_lua", "jdtls", "ccls", "rust_analyzer", "tsserver"}
-
-lsp_installer.settings({
-  ensure_installed = all_servs,
-  automatic_installation = false,
-  ui = {
-      icons = {
-          server_installed = "✓",
-          server_pending = "➜",
-          server_uninstalled = "✗"
-      }
-  }
 })
 
+local all_servs = { "bashls", "pyright", "gopls", "sumneko_lua", "jdtls", "clangd", "rust_analyzer", "tsserver"}
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -47,8 +43,11 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
-lsp_installer.setup{}
-require("lspconfig").sumneko_lua.setup{}
+require("mason-lspconfig").setup({
+  ensure_installed = all_servs,
+  automatic_installation = true,
+})
+
 for _, lsp in pairs (all_servs) do
   if lsp == 'sumneko_lua' then
     require ('lspconfig')[lsp].setup {
@@ -68,4 +67,3 @@ for _, lsp in pairs (all_servs) do
   }
   end
 end
-
