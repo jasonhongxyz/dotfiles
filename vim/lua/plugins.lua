@@ -91,7 +91,7 @@ require('packer').startup(function(use)
   -- colorschemes
   use {'catppuccin/nvim', as = 'catppuccin'}
   use {'folke/tokyonight.nvim', as = 'tokyonight'}
-  use {'navarasu/onedark.nvim', as = 'onedark'}
+  use {'navarasu/onedark.nvim', as = 'onedark', config = get_config('onedark_config') }
 
   if packer_bootstrap then
     require('packer').sync()

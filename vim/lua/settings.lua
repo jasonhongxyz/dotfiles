@@ -32,7 +32,6 @@ vim.wo.scrolloff = 8
 
 -- colorscheme
 vim.o.termguicolors = true
-vim.cmd [[ colorscheme onedark ]]
 
 -- set completeopt for completion
 vim.o.completeopt = 'menuone,noselect'
