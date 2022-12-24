@@ -5,6 +5,7 @@ vim.o.hlsearch = false
 
 -- make line numbers default
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- enable break indent
 vim.o.breakindent = true
@@ -17,13 +18,17 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 50
 vim.wo.signcolumn = 'yes'
 
 -- 2 spaces tabs
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
+
+
+-- scroll
+vim.wo.scrolloff = 8
 
 -- colorscheme
 vim.o.termguicolors = true
