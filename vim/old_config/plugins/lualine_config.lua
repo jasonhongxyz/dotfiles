@@ -1,12 +1,21 @@
-require('lualine').setup {
+local config = {
   options = {
     icons_enabled = false,
-    theme = 'tokyonight',
+    theme = 'auto',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
     always_divide_middle = true,
-    globalstatus = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+    }
   },
   sections = {
     lualine_a = {'mode'},
@@ -25,6 +34,9 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {},
+  winbar = {},
+  inactive_winbar = {},
   extensions = {}
 }
 
+require('lualine').setup(config)

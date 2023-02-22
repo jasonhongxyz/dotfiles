@@ -1,4 +1,0 @@
-require("null-ls").setup({
-
-})
-

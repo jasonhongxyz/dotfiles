@@ -73,14 +73,32 @@ source ~/.config/aliasrc
 
 # source pip
 export PATH="/Users/jasonhong/Library/Python/3.8/bin:$PATH"
+export PATH="/Users/jasonhong/go/bin:$PATH"
 
 # source jdtls
-export JAVA_HOME="/opt/homebrew/Cellar/openjdk/18.0.1.1/libexec/openjdk.jdk/Contents/Home"
+# export JAVA_HOME="/opt/homebrew/Cellar/openjdk/18.0.2.1_1/libexec/openjdk.jdk/Contents/Home"
+# export JAVA_HOME="/opt/homebrew/Cellar/openjdk/19/libexec/openjdk.jdk/Contents/Home"
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk/19/libexec/openjdk.jdk/Contents/Home"
 
 # source ruby
 source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
 source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.2
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/jasonhong/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/jasonhong/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jasonhong/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/jasonhong/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 # Load zsh-syntax-highlighting; should be last.
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
