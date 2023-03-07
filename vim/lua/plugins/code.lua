@@ -36,8 +36,8 @@ return {
     keys = {
       { "<leader>a", function() require("harpoon.mark").add_file() end, desc = "[hk] Harpoon mark"  },
       { "<C-e>", function() require("harpoon.ui").toggle_quick_menu() end, desc = "[hm] Harpoon menu"  },
-      { "hn", function() require("harpoon.ui").nav_next() end, desc = "[hn] Harpoon next"  },
-      { "hN", function() require("harpoon.ui").nav_prev() end, desc = "[hN] Harpoon prev"  },
+      { "<leader>n", function() require("harpoon.ui").nav_next() end, desc = "[hn] Harpoon next"  },
+      { "<leader>hN", function() require("harpoon.ui").nav_prev() end, desc = "[hN] Harpoon prev"  },
     },
   },
 }
