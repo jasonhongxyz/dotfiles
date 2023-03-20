@@ -40,4 +40,15 @@ return {
       { "<leader>hN", function() require("harpoon.ui").nav_prev() end, desc = "[hN] Harpoon prev"  },
     },
   },
+
+  {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('nvim-autopairs').setup()
+    end,
+  },
+
+  {
+    'windwp/nvim-ts-autotag',
+  },
 }

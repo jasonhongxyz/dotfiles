@@ -57,6 +57,9 @@ return {
             node_decremental = '<c-backspace>',
           },
         },
+      autotag = {
+        enable = true,
+      },
         textobjects = {
           select = {
             enable = true,

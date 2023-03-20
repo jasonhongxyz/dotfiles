@@ -29,60 +29,60 @@ return {
     config = function()
       local on_attach = function(_, bufnr)
 
-      -- :Format command local to LSP buffer
-      vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-        if vim.lsp.buf.format then
-          vim.lsp.buf.format()
-        elseif vim.lsp.buf.formatting then
-          vim.lsp.buf.formatting()
-        end
-      end, { desc = 'Format current buffer with LSP' })
+        -- :Format command local to LSP buffer
+        vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+          if vim.lsp.buf.format then
+            vim.lsp.buf.format()
+          elseif vim.lsp.buf.formatting then
+            vim.lsp.buf.formatting()
+          end
+        end, { desc = 'Format current buffer with LSP' })
 
-    end
+      end
 
-    require('mason').setup()
+      require('mason').setup()
 
-    local servers = { "bashls", "pyright", "gopls", "lua_ls", "jdtls", "clangd", "rust_analyzer", "tsserver" }
+      local servers = { "bashls", "pyright", "gopls", "lua_ls", "jdtls", "clangd", "rust_analyzer", "tsserver" }
 
-    require("mason-lspconfig").setup({
-      ensure_installed = servers,
-    })
+      require("mason-lspconfig").setup({
+        ensure_installed = servers,
+      })
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-    require('mason-lspconfig').setup_handlers {
-      function (server_name)
-        require('lspconfig')[server_name].setup{
-          on_attach = on_attach,
-          capabilities = capabilities,
-        }
-      end,
+      require('mason-lspconfig').setup_handlers {
+        function (server_name)
+          require('lspconfig')[server_name].setup{
+            on_attach = on_attach,
+            capabilities = capabilities,
+          }
+        end,
 
-      ['lua_ls'] = function ()
-        require('lspconfig')['lua_ls'].setup {
-          on_attach = on_attach,
-          capabilities = capabilities,
-          settings = {
-            Lua = {
-              runtime = {
-                version = 'LuaJIT',
-              },
-              diagnostics = {
-                globals = { 'vim' },
-              },
-              workspace = {
-                library = vim.api.nvim_get_runtime_file('', true),
-                checkThirdParty = false,
-              },
-              telemetry = {
-                enable = false,
-              },
+        ['lua_ls'] = function ()
+          require('lspconfig')['lua_ls'].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+              Lua = {
+                runtime = {
+                  version = 'LuaJIT',
+                },
+                diagnostics = {
+                  globals = { 'vim' },
+                },
+                workspace = {
+                  library = vim.api.nvim_get_runtime_file('', true),
+                  checkThirdParty = false,
+                },
+                telemetry = {
+                  enable = false,
+                },
+              }
             }
           }
-        }
-      end
-    }
+        end
+      }
     end,
   },
 
@@ -145,6 +145,12 @@ return {
           { name = 'lsp_signature' },
         }),
       }
+
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      cmp.event:on(
+        'confirm_done',
+        cmp_autopairs.on_confirm_done()
+      )
 
       cmp.setup(config)
     end,
