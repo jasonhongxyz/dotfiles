@@ -39,6 +39,7 @@ vim.o.completeopt = 'menuone,noselect'
 -- set right column
 vim.o.colorcolumn = "80"
 vim.cmd [[ highlight ColorColumn ctermbg=0 guibg=lightgrey ]]
+vim.cmd [[ let g:rustfmt_autosave = 1 ]]
 
 -- leader key
 vim.g.mapleader = ' '

@@ -13,6 +13,10 @@ return {
   },
 
   {
+    'rust-lang/rust.vim',
+  },
+
+  {
     'godlygeek/tabular',
   },
 
@@ -34,7 +38,7 @@ return {
   {
     'ThePrimeagen/harpoon',
     keys = {
-      { "<leader>a", function() require("harpoon.mark").add_file() end, desc = "[hk] Harpoon mark"  },
+      { "<leader>s", function() require("harpoon.mark").add_file() end, desc = "[hk] Harpoon mark"  },
       { "<C-e>", function() require("harpoon.ui").toggle_quick_menu() end, desc = "[hm] Harpoon menu"  },
       { "<leader>n", function() require("harpoon.ui").nav_next() end, desc = "[hn] Harpoon next"  },
       { "<leader>hN", function() require("harpoon.ui").nav_prev() end, desc = "[hN] Harpoon prev"  },
@@ -50,5 +54,30 @@ return {
 
   {
     'windwp/nvim-ts-autotag',
+  },
+
+  {
+    'github/copilot.vim',
+  },
+
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/notes",
+              },
+            },
+          },
+        },
+      }
+    end,
   },
 }
