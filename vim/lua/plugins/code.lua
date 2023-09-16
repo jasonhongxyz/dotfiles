@@ -38,10 +38,10 @@ return {
   {
     'ThePrimeagen/harpoon',
     keys = {
-      { "<leader>s", function() require("harpoon.mark").add_file() end, desc = "[hk] Harpoon mark"  },
-      { "<C-e>", function() require("harpoon.ui").toggle_quick_menu() end, desc = "[hm] Harpoon menu"  },
-      { "<leader>n", function() require("harpoon.ui").nav_next() end, desc = "[hn] Harpoon next"  },
-      { "<leader>hN", function() require("harpoon.ui").nav_prev() end, desc = "[hN] Harpoon prev"  },
+      { "<leader>s", function() require("harpoon.mark").add_file() end, desc = "[<leader>s] Harpoon mark"  },
+      { "<C-e>", function() require("harpoon.ui").toggle_quick_menu() end, desc = "[C-e] Harpoon menu"  },
+      { "<leader>n", function() require("harpoon.ui").nav_next() end, desc = "[<leader>n] Harpoon next"  },
+      { "<leader>hN", function() require("harpoon.ui").nav_prev() end, desc = "[<leader>hN] Harpoon prev"  },
     },
   },
 
@@ -54,10 +54,6 @@ return {
 
   {
     'windwp/nvim-ts-autotag',
-  },
-
-  {
-    'github/copilot.vim',
   },
 
   {
