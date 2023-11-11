@@ -10,3 +10,4 @@ export BROWSER="firefox"
 # ~/ Clean-up
 export ZDOTDIR="$HOME/.config/zsh"
 export LESSHISTFILE="-"
+. "$HOME/.cargo/env"

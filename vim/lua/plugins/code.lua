@@ -76,4 +76,12 @@ return {
       }
     end,
   },
+
+  {
+    'github/copilot.vim',
+  },
+
+  {
+    dir = '~/projects/signal.nvim',
+  }
 }

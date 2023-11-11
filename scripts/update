@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+echo "Starting MacOS update process..."
+
+# system
+echo "Updating MacOS System..."
+softwareupdate -l
+softwareupdate -ia
+
+# brew
+echo "Updating Homebrew packages..."
+brew update && brew upgrade
+
+# bun
+echo "Updating Bun..."
+bun upgrade
+
