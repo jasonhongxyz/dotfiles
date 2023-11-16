@@ -80,9 +80,9 @@ export PATH="/Users/jasonhong/go/bin:$PATH"
 export JAVA_HOME="/opt/homebrew/Cellar/openjdk/19/libexec/openjdk.jdk/Contents/Home"
 
 # source ruby
-source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
-source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.2
+# source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+# source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
+# chruby ruby-3.1.2
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -99,8 +99,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh --no-use"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 pfetch

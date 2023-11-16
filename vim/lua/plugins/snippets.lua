@@ -16,7 +16,7 @@ ls.add_snippets("all", {
 return {
   {
 	  "L3MON4D3/LuaSnip",
-	  version = "<CurrentMajor>.*",
+	  version = "v2.*",
 	  build = "make install_jsregexp",
     lazy = false,
     keys = {
