@@ -1,7 +1,4 @@
--- colorschemes
-
 return {
-
   {
     'catppuccin/nvim',
     name = 'catppuccin',

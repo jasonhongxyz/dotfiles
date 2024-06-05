@@ -1,7 +1,4 @@
--- ui
-
 return {
-
   {
     'lewis6991/gitsigns.nvim',
     event = { "BufReadPre", "BufNewFile" },
@@ -50,6 +47,14 @@ return {
   },
 
   {
+    'j-hui/fidget.nvim',
+    tag = "legacy",
+    config = function()
+      require('fidget').setup()
+    end,
+  },
+
+  {
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     keys = {
@@ -73,18 +78,8 @@ return {
   },
 
   {
-    'nvim-lualine/lualine.nvim',
-    config = function()
-      require('lualine').setup()
-    end,
+    'MunifTanjim/nui.nvim',
   },
 
-  {
-    'j-hui/fidget.nvim',
-    tag = "legacy",
-    config = function()
-      require('fidget').setup()
-    end,
-  },
 
 }
