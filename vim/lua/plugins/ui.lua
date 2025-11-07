@@ -81,5 +81,9 @@ return {
     'MunifTanjim/nui.nvim',
   },
 
+  {
+    dir = '~/projects/signal.nvim'
+  }
+
 
 }
